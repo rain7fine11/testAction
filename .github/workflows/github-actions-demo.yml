@@ -18,5 +18,12 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
-      - run: ls
-      - run: curl https://core.telegram.org/resources/cidr.txt
+      - run: curl -o telegramCIDR.txt https://core.telegram.org/resources/cidr.txt
+      - run: cat telegramCIDR.txt
+      - run: |
+          date > generated.txt
+          git config user.name Zhaoming Ma
+          git config user.email mazhaoming@vip.qq.com
+          git add .
+          git commit -m "Update telegramCIDR.txt"
+          git push
