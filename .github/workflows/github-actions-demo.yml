@@ -16,5 +16,4 @@ jobs:
           git config user.name Zhaoming Ma
           git config user.email mazhaoming@vip.qq.com
           git add .
-          git commit -m "Update telegramCIDR.txt"
-          git push
+          git commit -m "Update telegramCIDR.txt" && git push
