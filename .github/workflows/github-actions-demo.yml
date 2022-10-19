@@ -18,7 +18,7 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
-      - run: curl -o telegramCIDR.txt https://core.telegram.org/resources/cidr.txt
+      - run: curl -o telegramCIDR.txt http://www.wecool.net.cn/cidr.txt
       - run: cat telegramCIDR.txt
       - run: |
           date > generated.txt
