@@ -10,8 +10,9 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v3
       - name: get telegramCIDR
-        run: curl -o telegramCIDR.txt https://core.telegram.org/resources/cidr.txt
-      - name: commit and push
+        run: wget -O telegramCIDR.txt https://core.telegram.org/resources/cidr.txt
+      - if: ${{ success() }}
+        name: commit and push
         run: |
           if ! git diff --quiet; then
             git config user.name Zhaoming Ma
